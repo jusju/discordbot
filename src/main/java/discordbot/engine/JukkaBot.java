@@ -23,11 +23,11 @@ public class JukkaBot {
 	// The JDA Shardmanager instance, this is the brains of the entire bot. Without
 	// this, the bot doesn't boot.
 	private ShardManager buildShardManager(String token) throws LoginException {
-		// It is often better to load your token in from an external file or environment
-		// variable, especially if you plan on publishing the source code.
-		DefaultShardManagerBuilder builder = DefaultShardManagerBuilder.createDefault(token);
+	    DefaultShardManagerBuilder builder =
+	            DefaultShardManagerBuilder.createDefault(token)
+	                    .addEventListeners(new DiscordEventListener(this));
 
-		return builder.build();
+	    return builder.build();
 	}
 
 	public ShardManager getJDA() {
