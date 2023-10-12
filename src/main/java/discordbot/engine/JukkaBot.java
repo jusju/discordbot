@@ -11,6 +11,7 @@ public class JukkaBot {
 	protected static JukkaBot selfBot;
 	private ShardManager shardManager = null;
 
+	// Pakollinen konstruktori, jotta saadaan bot luotua
 	public JukkaBot(String token) {
 		try {
 			shardManager = buildShardManager(token);
